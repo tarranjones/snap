@@ -1,15 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarran
- * Date: 15/12/2016
- * Time: 12:50
- */
+
 
 namespace Tarranjones\snap;
 
 
 class Player
 {
+
+    public $name = "";
+
+    function __construct($name)
+    {
+        $this->name = $name;
+    }
+    public function takeTurn(CardGame $game ){
+
+        if($game->getPlayer() === $this){
+
+            $this->revealCard();
+
+        } else {
+
+            echo 'its not your turn';
+        }
+    }
 
 }

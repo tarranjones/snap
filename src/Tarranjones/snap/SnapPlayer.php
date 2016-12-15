@@ -1,15 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tarran
- * Date: 15/12/2016
- * Time: 13:44
- */
 
 namespace Tarranjones\snap;
 
-
-class SnapPlayer
+class SnapPlayer extends CardGamePlayer
 {
+    public function takeTurn()
+    {
+        // turn card
+        if($this->isSnap()){
+            $this->takePile();
+        } else {
+//            $this->nextPlayer();
+        }
+        // check winner
+    }
 
+    public function takePile()
+    {
+        $this->hand = array_merge($this->hand, $this->pile);
+    }
 }
